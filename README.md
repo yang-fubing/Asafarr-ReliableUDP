@@ -2,13 +2,7 @@
 基于UDP实现可靠传输协议，实现在包丢失、重复、失序等特殊情况下按序、可靠地交付UDP报文段。
 
 
-我们定义RUDP协议有四种消息类型，分别是start，end，data和ack。start，end，data的消息格式如下：
-
-start|<sequence number>|<data>|<checksum>
-  
-data|<sequence number>|<data>|<checksum>
-  
-end|<sequence number>|<data>|<checksum>
+我们定义RUDP协议有四种消息类型，分别是start，end，data和ack。
   
 start消息用来初始化连接，该消息中的sequence number是收发双方使用的初始包序号。发送完start消息后，连接得以建立，接下来便会发送data消息传递数据。
   
